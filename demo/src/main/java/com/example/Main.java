@@ -5,6 +5,7 @@ public class Main {
         System.out.println("Hello world!");
 
         calculateSum(5, 10, "Danilo");
+        calculateSum(69, 67, "Heitor");
         calculateSum(23, 20, "Luana");
     }
 
