@@ -6,6 +6,9 @@ public class Main {
 
         calculateSum(5, 10, "Danilo");
         calculateSum(1, 7, "Gustavo");
+        calculateSum(30, 8, "Gabriela");
+        calculateSum(69, 67, "Heitor");
+        calculateSum(23, 20, "Luana");
     }
 
   public static void calculateSum(int a, int b, String userName) {
