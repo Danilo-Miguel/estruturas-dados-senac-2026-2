@@ -5,9 +5,12 @@ public class Main {
         System.out.println("Hello world!");
 
         calculateSum(5, 10, "Danilo");
+        calculateSum(60, 9, "Sampaio");
     }
 
   public static void calculateSum(int a, int b, String userName) {
         System.out.println(a + b + " " + userName);
     }  
+
+
 }
