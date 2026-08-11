@@ -5,6 +5,9 @@ public class Main {
         System.out.println("Hello world!");
 
         calculateSum(5, 10, "Danilo");
+        calculateSum(8, 20, "Felipe");
+
+
     }
 
   public static void calculateSum(int a, int b, String userName) {
