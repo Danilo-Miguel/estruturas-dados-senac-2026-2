@@ -1,57 +1,58 @@
-package com.example;
+package com.example; // mesmo pacote do Main
 
-public class Calculadora {
+public class Calculadora { // classe que representa uma calculadora simples
 
-    private double primeiroValor;
-    private double segundoValor;
+    private double primeiroValor; // atributo PRIVADO: ninguém de fora acessa direto (encapsulamento)
+    private double segundoValor;  // atributo PRIVADO também
 
-    // Atributo somente leitura: tem getter, mas NÃO tem setter.
-    // O único jeito de mudar o resultado é executando uma operação.
+    // resultado também é privado, mas repare: só existe getResultado() lá embaixo,
+    // não existe setResultado(). Ou seja: dá pra ler de fora, mas não pra escrever direto.
+    // Só uma operação (somar, subtrair, multiplicar, dividir) pode mudar esse valor.
     private double resultado;
 
-    public Calculadora(double primeiroValor, double segundoValor) {
-        setPrimeiroValor(primeiroValor);
-        setSegundoValor(segundoValor);
+    public Calculadora(double primeiroValor, double segundoValor) { // construtor: roda quando fazemos "new Calculadora(...)"
+        setPrimeiroValor(primeiroValor); // usa o próprio setter pra guardar o valor recebido
+        setSegundoValor(segundoValor);   // idem para o segundo valor
     }
 
-    public double getPrimeiroValor() {
+    public double getPrimeiroValor() { // getter: método público que devolve o valor do atributo privado
         return primeiroValor;
     }
 
-    public void setPrimeiroValor(double primeiroValor) {
-        this.primeiroValor = primeiroValor;
+    public void setPrimeiroValor(double primeiroValor) { // setter: método público que altera o atributo privado
+        this.primeiroValor = primeiroValor; // "this.primeiroValor" é o atributo da classe; "primeiroValor" é o parâmetro recebido
     }
 
-    public double getSegundoValor() {
+    public double getSegundoValor() { // getter do segundo valor
         return segundoValor;
     }
 
-    public void setSegundoValor(double segundoValor) {
+    public void setSegundoValor(double segundoValor) { // setter do segundo valor
         this.segundoValor = segundoValor;
     }
 
-    public double getResultado() {
+    public double getResultado() { // só leitura: não existe setResultado()
         return resultado;
     }
 
-    public double somar() {
-        resultado = primeiroValor + segundoValor;
-        return resultado;
+    public double somar() { // operação 1: soma os dois valores guardados
+        resultado = primeiroValor + segundoValor; // guarda o resultado no atributo
+        return resultado; // e também devolve pra quem chamou
     }
 
-    public double subtrair() {
+    public double subtrair() { // operação 2: subtração
         resultado = primeiroValor - segundoValor;
         return resultado;
     }
 
-    public double multiplicar() {
+    public double multiplicar() { // operação 3: multiplicação
         resultado = primeiroValor * segundoValor;
         return resultado;
     }
 
-    public double dividir() {
-        if (segundoValor == 0) {
-            throw new ArithmeticException("Não é possível dividir por zero.");
+    public double dividir() { // operação 4: divisão
+        if (segundoValor == 0) { // proteção: não existe divisão por zero
+            throw new ArithmeticException("Não é possível dividir por zero."); // interrompe o programa com uma mensagem clara
         }
         resultado = primeiroValor / segundoValor;
         return resultado;
