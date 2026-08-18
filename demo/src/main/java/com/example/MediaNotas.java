@@ -10,6 +10,8 @@ public class MediaNotas {
         return nota1;
     }
 
+    
+
     public void setNota1(double nota1) {
         this.nota1 = nota1;
     }
