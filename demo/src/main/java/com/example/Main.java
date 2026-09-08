@@ -42,5 +42,35 @@ public class Main {
         ArrayEstatico.exibirComIndice(numeros, tamanho); // mostra indice + valor
         ArrayEstatico.exibirForEach(numeros, tamanho);   // mostra so o valor (for-each)
         ArrayEstatico.exibirWhile(numeros, tamanho);     // mostra so o valor (while)
+
+        // 1) Declarar e inicializar fila estatica (capacidade fixa = 5).
+        FilaEstaticaArrayCircular fila = new FilaEstaticaArrayCircular(5);
+
+        // 2) Ver capacidade e tamanho atual.
+        System.out.println("Capacidade: " + fila.capacidade());
+        System.out.println("Tamanho inicial: " + fila.tamanho());
+
+        // 3) Inserir elementos (enqueue).
+        fila.enqueue(10);
+        fila.enqueue(20);
+        fila.enqueue(30);
+        fila.exibir();
+
+        // 4) Ver quem esta na frente (peek).
+        System.out.println("Frente atual: " + fila.peek());
+
+        // 5) Remover elemento (dequeue).
+        int removido = fila.dequeue();
+        System.out.println("Removido da frente: " + removido);
+        fila.exibir();
+
+        // 6) Mostrar comportamento circular e limite estatico.
+        fila.enqueue(40);
+        fila.enqueue(50);
+        fila.enqueue(60);
+        fila.enqueue(70); // lota
+        boolean ok = fila.enqueue(80); // falha (cheia)
+        System.out.println("Tentou enqueue 80? " + ok);
+        fila.exibir();
     }
 }
