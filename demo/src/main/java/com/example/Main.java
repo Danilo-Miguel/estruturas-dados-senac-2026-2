@@ -3,43 +3,44 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-     Scanner feel = new Scanner(System.in);
+        System.out.println("Hello world!");
 
-     double valores[] = new double[5];
+        // 1) DECLARACAO: cria a variavel que vai apontar para um array de int.
+        int[] numeros;
 
-     for (int i = 0; i < 5; i++){
+        // 2) INICIALIZACAO/CONSTRUCAO: cria o array com 8 posicoes fixas.
+        numeros = new int[8];
 
-        System.out.println("Digite um valor " + (i + 1) + " ");
-        valores[i] = feel.nextDouble();
-        }
+        // Controla quantos elementos estao realmente em uso.
+        int tamanho = 0;
 
-        double soma = 0;
-        double maiorvalor = valores[0];
-        double menorValor = valores[0];
-        int indiceMaior = 0;
-        int indiceMenor = 0;
-        
-        for(int i = 0; i < valores.length; i++) {
-            soma += valores[i];
+        // 3) TAMANHO TOTAL (capacidade fixa) do array.
+        System.out.println("Capacidade do array: " + numeros.length);
 
-            if (valores[i] > maiorvalor){
-                maiorvalor = valores[i];
-                indiceMaior = i;
-            }
+        // 4) INSERIR NO FIM (simples).
+        tamanho = ArrayEstatico.inserirNoFim(numeros, tamanho, 10);
+        tamanho = ArrayEstatico.inserirNoFim(numeros, tamanho, 20);
+        tamanho = ArrayEstatico.inserirNoFim(numeros, tamanho, 30);
+        ArrayEstatico.exibirComIndice(numeros, tamanho);
 
-            if(valores[i] < menorValor) {
-                menorValor = valores[i];
-                indiceMenor = i;
-            }
-        }
+        // 4) INSERIR EM POSICAO (precisa deslocar para a direita).
+        tamanho = ArrayEstatico.inserirEmPosicao(numeros, tamanho, 1, 15);
+        ArrayEstatico.exibirComIndice(numeros, tamanho);
 
-        double media = soma / valores.length;
+        // 5) REMOVER POR INDICE (precisa deslocar para a esquerda).
+        tamanho = ArrayEstatico.removerPorIndice(numeros, tamanho, 2);
+        ArrayEstatico.exibirComIndice(numeros, tamanho);
 
-        System.out.printf("Total do dia: %.2f%n", soma);
-        System.out.printf("Media por caixa: %.2f%n", media);
-        System.out.printf("Maior venda: Caixa %d com %.2f%n", (indiceMaior + 1), maiorvalor);
-        System.out.printf("Menor venda: Caixa %d com %.2f%n", (indiceMenor + 1), menorValor);
-  
-     }
+        // Leitura por indice (acesso direto O(1)).
+        System.out.println("Elemento no indice 1: " + numeros[1]);
 
+        // Busca simples (linear O(n)).
+        int indice = ArrayEstatico.buscar(numeros, tamanho, 30);
+        System.out.println("Valor 30 encontrado no indice: " + indice);
+
+        // ---- 3 formas de exibir ----
+        ArrayEstatico.exibirComIndice(numeros, tamanho); // mostra indice + valor
+        ArrayEstatico.exibirForEach(numeros, tamanho);   // mostra so o valor (for-each)
+        ArrayEstatico.exibirWhile(numeros, tamanho);     // mostra so o valor (while)
     }
+}
