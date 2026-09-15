@@ -2,13 +2,13 @@ package com.example;
 
 public class Main {
     public static void main(String[] args) {
-        AnaliseComplexidade analise = new AnaliseComplexidade();
-        analise.demonstrarTodos();
+        Estacionamento e = new Estacionamento(3);
 
-        new DeclaracaoVetores().demonstrarTodos();
-        new PercorrerVetores().demonstrarTodos();
-        new TiposDeVetores().demonstrarTodos();
-        new RegrasVetores().demonstrarTodos();
-        new ArrayPratico().executar();
+        e.estacionar("ABC1234");
+        e.estacionar("XYZ5678");
+        System.out.println(e.placasDisponiveis());
+        System.out.println("Livres: " + e.vagasDisponiveis());
+        System.out.println("Saiu: " + e.sair());
+        
     }
 }
