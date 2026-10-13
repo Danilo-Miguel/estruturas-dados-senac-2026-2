@@ -9,6 +9,24 @@ package com.example;
 public class ArvoreExemploSimples {
 
     /**
+     * Representa um no de uma arvore generica.
+     *
+     * Neste primeiro contato, um no guarda:
+     * - um nome;
+     * - uma lista de filhos.
+     *
+     * Essa ideia e suficiente para estudar raiz, no, folha, altura e profundidade.
+     */
+
+        /**
+         * Adiciona um filho ao no atual.
+         *
+         * @param filho no que sera ligado como filho
+         */
+      
+    }
+
+    /**
      * Verifica se um no e folha.
      *
      * Folha e o no que nao possui filhos.

@@ -77,4 +77,8 @@ public class No {
     public void setFilhos(List<No> filhos) {
         this.filhos = filhos;
     }
+      private void adicionarFilho(No filho) {
+            // Coloca o novo filho na lista de filhos deste no.
+            filhos.add(filho);
+        }
 }
