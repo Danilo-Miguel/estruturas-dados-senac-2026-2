@@ -16,10 +16,17 @@ public class No {
         filhos.add(filho);
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+        
     public String getNome() {
         return nome;
     }
 
+    public void setFilhos(List<No> filhos) {
+        this.filhos = filhos;
+    }
 
     public List<No> getFilhos() {
         return filhos;
