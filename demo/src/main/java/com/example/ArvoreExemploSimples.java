@@ -23,10 +23,7 @@ public class ArvoreExemploSimples {
          *
          * @param filho no que sera ligado como filho
          */
-        private void adicionarFilho(No filho) {
-            // Coloca o novo filho na lista de filhos deste no.
-            filhos.add(filho);
-        }
+      
     }
 
     /**
