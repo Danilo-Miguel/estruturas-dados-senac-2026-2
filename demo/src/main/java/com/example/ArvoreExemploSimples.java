@@ -8,14 +8,6 @@ package com.example;
  */
 public class ArvoreExemploSimples {
 
-    /**
-     * Verifica se um no e folha.
-     *
-     * Folha e o no que nao possui filhos.
-     *
-     * @param no no que sera analisado
-     * @return true quando o no nao tem filhos; false caso contrario
-     */
     public static boolean ehFolha(No no) {
         // Se o no nem existe, retornamos false neste material.
         if (no == null) {
@@ -190,9 +182,9 @@ public class ArvoreExemploSimples {
         No suporte = new No("Suporte");
 
         // PASSO 3: ligar os filhos diretos na raiz.
-        raiz.adicionarFilho(financeiro);
-        raiz.adicionarFilho(vendas);
-        raiz.adicionarFilho(suporte);
+        raiz.getFilhos();
+        raiz.getFilhos();
+        raiz.getFilhos();
 
         // PASSO 4: criar nos de um nivel mais abaixo.
         No contas = new No("Contas");
@@ -201,10 +193,10 @@ public class ArvoreExemploSimples {
         No lojaOnline = new No("Loja Online");
 
         // PASSO 5: ligar os novos nos aos seus pais.
-        financeiro.adicionarFilho(contas);
-        financeiro.adicionarFilho(cobranca);
-        vendas.adicionarFilho(lojaFisica);
-        vendas.adicionarFilho(lojaOnline);
+        financeiro.getFilhos();
+        financeiro.getFilhos();
+        vendas.getFilhos();
+        vendas.getFilhos();
 
         // Desenho aproximado da arvore montada:
         //
