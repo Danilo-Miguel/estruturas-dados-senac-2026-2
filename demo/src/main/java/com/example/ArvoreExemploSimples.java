@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Exemplo simples para apresentar conceitos basicos de arvores.
  *

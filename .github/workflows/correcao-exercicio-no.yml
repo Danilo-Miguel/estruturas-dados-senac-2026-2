@@ -1,0 +1,30 @@
+name: Correcao - Exercicio classe No
+
+on:
+  pull_request:
+    branches:
+      - "aula-13/10"
+    paths:
+      - "demo/src/main/java/com/example/**"
+  push:
+    branches:
+      - "aula-13/10"
+    paths:
+      - "demo/src/main/java/com/example/**"
+  workflow_dispatch:
+
+jobs:
+  corrigir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Corrigir exercicio
+        run: bash .github/correcao/corrigir-exercicio-no.sh
