@@ -1,4 +1,4 @@
-private static class No {
+private  class No {
     // Nome do no, usado para facilitar a leitura do exemplo.
     private String nome;
 
