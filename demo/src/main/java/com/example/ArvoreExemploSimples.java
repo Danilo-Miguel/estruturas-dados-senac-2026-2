@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Exemplo simples para apresentar conceitos basicos de arvores.
  *
@@ -47,7 +44,7 @@ public class ArvoreExemploSimples {
         }
 
         // Um no e folha quando sua lista de filhos esta vazia.
-        return no.filhos.isEmpty();
+        return no.getFilhos().isEmpty();
     }
 
     /**
@@ -66,7 +63,7 @@ public class ArvoreExemploSimples {
         int total = 1;
 
         // Depois somamos a quantidade de nos de cada filho.
-        for (No filho : raiz.filhos) {
+        for (No filho : raiz.getFilhos()) {
             total += contarNos(filho);
         }
 
@@ -95,7 +92,7 @@ public class ArvoreExemploSimples {
         int totalFolhas = 0;
 
         // Percorre cada filho e soma as folhas dele.
-        for (No filho : raiz.filhos) {
+        for (No filho : raiz.getFilhos()) {
             totalFolhas += contarFolhas(filho);
         }
 
@@ -127,7 +124,7 @@ public class ArvoreExemploSimples {
         int maiorAlturaDosFilhos = -1;
 
         // Calcula a altura de cada filho.
-        for (No filho : raiz.filhos) {
+        for (No filho : raiz.getFilhos()) {
             int alturaDoFilho = altura(filho);
 
             // Atualiza a maior altura quando encontrar um valor maior.
@@ -155,12 +152,12 @@ public class ArvoreExemploSimples {
         }
 
         // Se encontramos o nome, devolvemos a profundidade atual.
-        if (raiz.nome.equals(nomeProcurado)) {
+        if (raiz.getNome().equals(nomeProcurado)) {
             return nivelAtual;
         }
 
         // Procura o no desejado em cada filho.
-        for (No filho : raiz.filhos) {
+        for (No filho : raiz.getFilhos()) {
             int resultado = profundidade(filho, nomeProcurado, nivelAtual + 1);
 
             // Se encontrou em algum filho, devolve o resultado imediatamente.
@@ -191,10 +188,10 @@ public class ArvoreExemploSimples {
         }
 
         // Mostra o nome do no atual.
-        System.out.println("- " + raiz.nome);
+        System.out.println("- " + raiz.getNome());
 
         // Exibe cada filho em um nivel abaixo.
-        for (No filho : raiz.filhos) {
+        for (No filho : raiz.getFilhos()) {
             exibirArvore(filho, nivel + 1);
         }
     }
@@ -246,7 +243,7 @@ public class ArvoreExemploSimples {
         exibirArvore(raiz, 0);
 
         // Explica quem e a raiz.
-        System.out.println("\nRaiz: " + raiz.nome);
+        System.out.println("\nRaiz: " + raiz.getNome());
 
         // Mostra a quantidade total de nos.
         System.out.println("Quantidade total de nos: " + contarNos(raiz));

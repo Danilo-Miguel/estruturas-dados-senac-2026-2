@@ -1,0 +1,21 @@
+Arvore montada em etapas:
+
+- Empresa
+  - Financeiro
+    - Contas
+    - Cobranca
+  - Vendas
+    - Loja Fisica
+    - Loja Online
+  - Suporte
+
+Raiz: Empresa
+Quantidade total de nos: 8
+Quantidade de folhas: 5
+Altura da arvore: 2
+Profundidade de Empresa: 0
+Profundidade de Vendas: 1
+Profundidade de Loja Online: 2
+
+Contas e folha? true
+Financeiro e folha? false
