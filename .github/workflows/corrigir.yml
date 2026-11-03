@@ -20,5 +20,8 @@ jobs:
       - name: Compilar e corrigir
         run: |
           mkdir -p out
-          javac -encoding UTF-8 -d out $(find . -path '*/src/main/java/*.java') corretor/Corretor.java
+          find . -name '*.java' -not -path './corretor/*' -not -path './gabarito/*' -not -path './out/*' > fontes.txt
+          echo "Arquivos do aluno encontrados:"
+          cat fontes.txt
+          javac -encoding UTF-8 -d out @fontes.txt corretor/Corretor.java
           java -cp out Corretor
