@@ -20,7 +20,7 @@ public class ArvoreBinaria {
         return buscar(raiz, valor);
     }
 
-    private boolean buscar(No no, int valor) {
+    private int buscar(No no, int valor) {
         if(no == null) {
             return false;
         }
