@@ -14,13 +14,15 @@ public class ArvoreBinaria {
         } else if(valor > no.valor) {
             no.direita = inserir(no.direita, valor);
         }
+
+        return no;
     }
 
-    public bolean buscar(int valor) {
+    public boolean buscar(int valor) {
         return buscar(raiz, valor);
     }
 
-    private int buscar(No no, int valor) {
+    private boolean buscar(No no, int valor) {
         if(no == null) {
             return false;
         }
