@@ -1,7 +1,7 @@
 public class ArvoreBinaria {
     No raiz;
 
-    public void inserir(int valor) {
+    void inserir(int valor) {
         raiz = inserir(raiz, valor);
     }
 
