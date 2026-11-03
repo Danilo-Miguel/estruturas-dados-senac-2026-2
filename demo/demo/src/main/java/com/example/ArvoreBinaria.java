@@ -135,7 +135,7 @@ public class ArvoreBinaria {
         }
     }
 
-    public contarConexoes() {
+    public int contarConexoes() {
         return contarConexoes(raiz);
     }
 
