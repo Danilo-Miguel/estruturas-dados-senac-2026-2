@@ -20,5 +20,5 @@ jobs:
       - name: Compilar e corrigir
         run: |
           mkdir -p out
-          javac -encoding UTF-8 -d out src/main/java/*.java corretor/Corretor.java
+          javac -encoding UTF-8 -d out $(find . -path '*/src/main/java/*.java') corretor/Corretor.java
           java -cp out Corretor
