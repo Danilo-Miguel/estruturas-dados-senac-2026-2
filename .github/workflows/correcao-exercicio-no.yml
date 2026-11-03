@@ -3,12 +3,7 @@ name: Correcao - Exercicio classe No
 on:
   pull_request:
     branches:
-      - "aula-13/10"
-    paths:
-      - "demo/src/main/java/com/example/**"
-  push:
-    branches:
-      - "aula-13/10"
+      - "aula-03/11"
     paths:
       - "demo/src/main/java/com/example/**"
   workflow_dispatch:
