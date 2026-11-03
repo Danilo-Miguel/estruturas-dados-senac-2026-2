@@ -85,24 +85,7 @@ public class ArvoreBinaria {
     }
 
 
-    private int alturaOuDesbalanceada(No no) {
-        if (no == null) {
-            return -1;
-        }
-        int esq = alturaOuDesbalanceada(no.esquerda);
-        if (esq == -2) {
-            return -2;
-        }
-        int dir = alturaOuDesbalanceada(no.direita);
-        if (dir == -2) {
-            return -2;
-        }
-        if (Math.abs(esq - dir) > 1) {
-            return -2;
-        }
-        return 1 + Math.max(esq, dir);
-    }
-
+    
    
     public int[] emOrdem() {
         List<Integer> lista = new ArrayList<>();
@@ -122,6 +105,25 @@ public class ArvoreBinaria {
         lista.add(no.valor);
         emOrdem(no.direita, lista);
     }
+
+    private int alturaOuDesbalanceada(No no) {
+        if (no == null) {
+            return -1;
+        }
+        int esq = alturaOuDesbalanceada(no.esquerda);
+        if (esq == -2) {
+            return -2;
+        }
+        int dir = alturaOuDesbalanceada(no.direita);
+        if (dir == -2) {
+            return -2;
+        }
+        if (Math.abs(esq - dir) > 1) {
+            return -2;
+        }
+        return 1 + Math.max(esq, dir);
+    }
+//oi
 
     
     public int maximo() {
