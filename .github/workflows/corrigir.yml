@@ -1,0 +1,24 @@
+name: Corrigir atividade de arvore binaria
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  corrigir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Compilar e corrigir
+        run: |
+          mkdir -p out
+          javac -encoding UTF-8 -d out $(find . -path '*/src/main/java/*.java') corretor/Corretor.java
+          java -cp out Corretor
