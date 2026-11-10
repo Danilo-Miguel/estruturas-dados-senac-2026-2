@@ -1,5 +1,3 @@
-package com.arvorebinaria;
-
 public class No {
     int valor;
     No esquerda;

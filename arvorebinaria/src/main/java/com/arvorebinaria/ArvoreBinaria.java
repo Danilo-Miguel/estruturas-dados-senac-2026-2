@@ -1,5 +1,3 @@
-package com.arvorebinaria;
-
 public class ArvoreBinaria {
     No raiz;
 
